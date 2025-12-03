@@ -6,6 +6,7 @@ async function loadSheet(){
 }
 
 function onSignIn(response){
+  console.log("User signed in:", response);
   document.querySelector(".g_id_signin").style.display = "none";
   init();
 }
@@ -151,4 +152,5 @@ function animate(){
   TWEEN.update();
   renderer.render(scene, camera);
 }
+
 
