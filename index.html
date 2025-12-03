@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3D Periodic Table</title>
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://threejs.org/examples/js/renderers/CSS3DRenderer.js"></script>
+        <script src="https://threejs.org/examples/js/libs/tween.min.js"></script>
+
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    </head>
+
+    <body>
+
+        <div id="g_id_onload"
+        data-client_id="1056336401800-6td7lcd9id6d7e2ofajtcmi71t2p437v.apps.googleusercontent.com"
+        data-callback="onSignIn">
+    </div>
+
+    <div class="g_id_signin" data_type="standard"></div>
+
+    <div id="container"></div>
+
+    <script src="script.js"></script>
+
+    <button onclick="transform(targets.table, 2000)">Table</button>
+    <button onclick="transform(targets.sphere, 2000)">Sphere</button>
+    <button onclick="transform(targets.helix, 2000)">Helix</button>
+    <button onclick="transform(targets.grid, 2000)">Grid</button>
+</body>
+</html>
