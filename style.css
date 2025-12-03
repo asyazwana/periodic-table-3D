@@ -1,6 +1,4 @@
-/* style.css - for periodic-table-3D project */
 
-/* page + container */
 html, body {
   height: 100%;
   margin: 0;
@@ -156,3 +154,4 @@ button:active { transform: translateY(0); }
   border-radius: 8px;
   z-index: 1000;
 }
+
