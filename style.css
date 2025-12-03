@@ -1,0 +1,158 @@
+/* style.css - for periodic-table-3D project */
+
+/* page + container */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #0f1b2b 0%, #081017 100%);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Basic button bar (top-left) */
+.controls {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+button {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+  transition: transform .12s ease, background .12s ease;
+}
+button:hover { transform: translateY(-2px); background: rgba(255,255,255,0.11); }
+button:active { transform: translateY(0); }
+
+/* Google sign-in placement (optional) */
+.g_id_signin {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 1000;
+}
+
+/* CSS3D element (tile) */
+.element {
+  width: 160px;            /* tile width */
+  height: 200px;           /* tile height */
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,0.06);
+  box-shadow:
+    0 6px 18px rgba(2,6,23,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.02);
+  color: #fff;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform .2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(255,255,255,0.04);
+  font-weight: 600;
+}
+
+/* tile hover effect (only visual) */
+.element:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.75);
+}
+
+/* id (top small) */
+.element .id {
+  font-size: 12px;
+  opacity: 0.9;
+  align-self: flex-start;
+  margin-left: 6px;
+  margin-bottom: 6px;
+}
+
+/* name / headline */
+.element .name {
+  font-size: 15px;
+  line-height: 1;
+  margin-bottom: 8px;
+  min-height: 36px;
+  padding: 0 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* image/photo in the middle */
+.element img.photo {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.06);
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.03);
+}
+
+/* worth and company (bottom) */
+.element .worth {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: 6px;
+}
+
+.element .company {
+  font-size: 12px;
+  opacity: 0.9;
+  padding: 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* color hints — keep them subtle (overridden by inline style in JS) */
+.element.worth-low { background: #561212; }     /* red-ish */
+.element.worth-mid { background: #51320e; }     /* orange-ish */
+.element.worth-high{ background: #123416; }     /* green-ish */
+
+/* make page responsive: reduce tile size when viewport small */
+@media (max-width: 900px) {
+  .element { width: 120px; height: 160px; padding: 8px; }
+  .element img.photo { width: 72px; height: 72px; }
+  button { padding: 6px 10px; font-size: 13px; }
+}
+
+/* small helper to center a loading message (optional) */
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  background: rgba(0,0,0,0.35);
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 1000;
+}
