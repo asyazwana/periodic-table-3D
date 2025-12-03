@@ -1,5 +1,5 @@
 async function loadSheet(){
-  let url = "https://script.google.com/macros/s/AKfycbw8PIu80EHiJimS4p4C4cqKgvt0Nidi9rxeBjTyJSDGCQAJva0ic2N_MBYQ9pNt-zOZ/exechttps://script.google.com/macros/s/AKfycbyqDRRlQk_jHf0PrDTLJ02Wq_PfSb6Q451-Ma63FRze9Dd-1wY0h6PnnLoeDQ4giGyloQ/exec"
+  let url = "https://script.google.com/macros/s/AKfycbxFwdTQJJ9lEpeHqlQIYUigGiO4zSRumgJJ90BT1xOxjaNJCvRIkaGougyUCGqwh8Hjyg/exec"
   let res = await fetch(url);
   let data = await res.json();
   return data;
@@ -151,3 +151,4 @@ function animate(){
   TWEEN.update();
   renderer.render(scene, camera);
 }
+
